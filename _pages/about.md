@@ -1,13 +1,24 @@
 ---
 layout: page
-title: About
-image: 08.jpg
-permalink: /about/
+title: bachelorThesis
+permalink: /bachelorThesis/
 ---
 
-My name is Natali Anderson. I'm an actress. Copper mug fam food truck intelligentsia 8-bit echo park ramps meggings humblebrag tacos selfies. Umami austin mlkshk, sriracha sartorial everyday carry shaman meh coloring book taxidermy slow-carb scenester pitchfork echo park. Selvage bushwick chambray coloring book put a bird on it 90's stumptown intelligentsia direct trade. Cornhole +1 polaroid gentrify, offal twee before they sold out whatever wolf.
+## bachelorThesis
 
-#### Risko...
-<small>2008 - 2017</small>
+### Title:
 
-Offal post-ironic before they sold out mixtape you probably haven't heard of them. Pinterest roof party umami everyday carry street art. Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Authentic post-ironic kogi, schlitz shabby chic cardigan plaid artisan copper mug woke hoodie lumbersexual gluten-free franzen. Schlitz taiyaki freegan vinyl cloud bread narwhal, meh +1 cray prism fanny pack helvetica meditation chartreuse raw denim.
+Interactive Exponates in Science Centers
+
+### Description:
+
+In this Thesis we describe new way to calibrate the camera (Kinect) and projector system. We have designed our own way of gaining point pairs using the character skeleton obtained directly from Kinect. Our solution is fast, simple, does not require a lot of point pairs. We designed, implemented and practically verifed the ninja keyboard exhibit and ping-pong game.
+
+### Goals:
+
+1. Analyze interactive exhibits exploiting virtual or augmented reality
+2. Implement interactive exhibits exploiting virtual or augmented reality
+
+**[Presentation]**(https://thesis.science.upjs.sk/~rstana/wp-content/uploads/2019/08/Interaktívne-exponáty-prezentacia.pptx)
+
+**[Thesis]**(https://thesis.science.upjs.sk/~rstana/wp-content/uploads/2019/08/bc.pdf)
