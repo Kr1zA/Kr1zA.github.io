@@ -4,8 +4,6 @@ title: bachelorThesis
 permalink: /bachelorThesis/
 ---
 
-## bachelorThesis
-
 ### Title:
 
 Interactive Exponates in Science Centers
@@ -19,6 +17,6 @@ In this Thesis we describe new way to calibrate the camera (Kinect) and projecto
 1. Analyze interactive exhibits exploiting virtual or augmented reality
 2. Implement interactive exhibits exploiting virtual or augmented reality
 
-**[Presentation]**(https://thesis.science.upjs.sk/~rstana/wp-content/uploads/2019/08/Interaktívne-exponáty-prezentacia.pptx)
+[**Presentation**](https://thesis.science.upjs.sk/~rstana/wp-content/uploads/2019/08/Interaktívne-exponáty-prezentacia.pptx)
 
-**[Thesis]**(https://thesis.science.upjs.sk/~rstana/wp-content/uploads/2019/08/bc.pdf)
+[**Thesis**](https://thesis.science.upjs.sk/~rstana/wp-content/uploads/2019/08/bc.pdf)
