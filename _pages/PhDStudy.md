@@ -8,5 +8,5 @@ permalink: /PhDStudy/
 Just beginning...
 
 ## Teaching
-[administrationOfOS](administrationOfOS/)
-administrationOfOS
+* [administrationOfOS](administrationOfOS/)
+* [userEnvironmentsOfOperatingSystems](userEnvironmentsOfOperatingSystems/)
