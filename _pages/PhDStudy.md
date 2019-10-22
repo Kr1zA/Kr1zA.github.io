@@ -8,5 +8,5 @@ permalink: /PhDStudy/
 Just beginning...
 
 ## Teaching
-* [administrationOfOS](administrationOfOS/)
-* [userEnvironmentsOfOperatingSystems](userEnvironmentsOfOperatingSystems/)
+* [administrationOfOS](https://kr1za.github.io/administrationOfOS/)
+* [userEnvironmentsOfOperatingSystems](https://kr1za.github.io/userEnvironmentsOfOperatingSystems/)
