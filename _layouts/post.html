@@ -1,15 +1,6 @@
 ---
 layout: default
 ---
-<div class="container">
-	<div class="row">
-		<div class="col col-12">
-			<div class="post-image-box">
-				<div class="post-image" style="background-image: url({{"/img/" | prepend: site.baseurl | append : page.image}})"></div>
-			</div>
-		</div>
-	</div>
-</div>
 
 <div class="container">
 	<div class="row">
@@ -97,11 +88,7 @@ layout: default
 			{% if site.disqus-identifier %}
 				{% include disqus-comments.html %}
 			{% endif %}
-	</article> <!-- /.post -->
-
-	<div class="col col-12 col-t-4">
-		{% include sidebar.html %}
-	</div>
+		</article> <!-- /.post -->
 
 	</div>
 </div>
