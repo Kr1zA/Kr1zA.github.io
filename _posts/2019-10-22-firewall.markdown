@@ -1,0 +1,26 @@
+---
+layout: post
+title:  firewall
+date:   2019-10-22 
+tags:   [AOS, firewall]
+---
+## [Iptables](https://www.netfilter.org/ "Iptables")
+
+__Z oficialnej stranky:__
+
+netfilter.org is home to the software of the packet filtering framework inside the Linux 2.4.x and later kernel series. Software commonly associated with netfilter.org is iptables.
+
+Software inside this framework enables packet filtering, network address [and port] translation (NA[P]T) and other packet mangling. It is the re-designed and heavily improved successor of the previous Linux 2.2.x ipchains and Linux 2.0.x ipfwadm systems.
+
+Nasledujuci diagram znazornuje cestu packetu v ramci linuxoveho stroja:
+[![diagram retazcov]({{site.baseurl}}/img/cestaPacketu.jpg "diagram retazcov")](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram retazcov")
+
+Tabulka __filter__ 
+
+Odkazy:
+[__Seriál Vše o iptables__](https://www.root.cz/serialy/vse-o-iptables/ "Seriál Vše o iptables")
+[__Seriál Stavíme firewall__](https://www.root.cz/serialy/stavime-firewall/ "Seriál Stavíme firewall")
+__https://www.docum.org/docum.org/kptd/__
+__https://www.booleanworld.com/depth-guide-iptables-linux-firewall/__
+
+
