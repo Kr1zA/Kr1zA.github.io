@@ -18,9 +18,12 @@ Nasledujuci diagram znazornuje cestu packetu v ramci linuxoveho stroja:
 Tabulka __filter__ 
 
 Odkazy:
-[__Seriál Vše o iptables__](https://www.root.cz/serialy/vse-o-iptables/ "Seriál Vše o iptables")
-[__Seriál Stavíme firewall__](https://www.root.cz/serialy/stavime-firewall/ "Seriál Stavíme firewall")
-__https://www.docum.org/docum.org/kptd/__
-__https://www.booleanworld.com/depth-guide-iptables-linux-firewall/__
+[Seriál Vše o iptables](https://www.root.cz/serialy/vse-o-iptables/ "Seriál Vše o iptables")
+
+[Seriál Stavíme firewall](https://www.root.cz/serialy/stavime-firewall/ "Seriál Stavíme firewall")
+
+https://www.docum.org/docum.org/kptd/
+
+https://www.booleanworld.com/depth-guide-iptables-linux-firewall/
 
 
