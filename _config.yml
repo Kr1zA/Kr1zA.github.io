@@ -1,16 +1,16 @@
 #-------------------------------
 # General Site Settings
 
-title: Galada Theme | Theme for Jekyll
-description: Galada is an easy and simple theme for Jekyll. Dark colors, give it a special exquisite look. A careful approach to design and features make it an ideal solution for a personal blog. # this means to ignore newlines until "baseurl:"
+title: kriza page
+description: kriza page
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #-------------------------------
 # About Section
-author-name:   Natali Anderson
-author-avatar: 09.jpg
+author-name:   Richard Staňa
+author-avatar: img.jpg
 
 
 #-------------------------------
@@ -33,7 +33,7 @@ instafeed: true # To enable the instafeed, use the value true. To turn off use t
 
 #-------------------------------
 # Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1.
+google-analytics: UA-81190271-1
 
 
 #-------------------------------
