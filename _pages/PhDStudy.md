@@ -8,4 +8,5 @@ permalink: /PhDStudy/
 Just beginning...
 
 ## Teaching
-[]()
+[administrationOfOS](administrationOfOS/)
+administrationOfOS
