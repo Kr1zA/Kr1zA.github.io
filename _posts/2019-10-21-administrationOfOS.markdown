@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "administrationOfOS"
-date:   2018-05-29 18:05:55 +0300
-image:  11.jpg
+date:   2019-10-22 
 tags:   [teaching, AOS]
 ---
 ## Obsah:
