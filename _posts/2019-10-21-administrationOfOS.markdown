@@ -10,8 +10,8 @@ tags:   [teaching, AOS]
 Obsah vychádza odtiaľ - https://www.lpi.org/our-certifications/lpic-2-overview
 --->
 
-* __[firewall](firewall/ "firewall")__
-* __[Linux NAT Router](linux-nat-router "Linux NAT Router")__
+* [firewall](https://kr1za.github.io/firewall/)
+* [Linux NAT Router](linux-nat-router "Linux NAT Router")
 * DHCP server 
 * SSH server
 * Webový server
