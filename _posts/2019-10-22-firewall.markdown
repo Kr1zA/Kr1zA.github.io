@@ -17,6 +17,9 @@ Nasledujuci diagram znazornuje cestu packetu v ramci linuxoveho stroja:
 
 Tabulka __filter__ 
 
+
+[Prezentacia](https://github.com/Kr1zA/Kr1zA.github.io/blob/master/pdf/firewall.pdf)
+
 Odkazy:
 [Seriál Vše o iptables](https://www.root.cz/serialy/vse-o-iptables/ "Seriál Vše o iptables")
 
