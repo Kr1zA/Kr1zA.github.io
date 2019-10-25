@@ -6,3 +6,5 @@ tags:   [Teaching, POS2a]
 ---
 
 [link](https://pavolsokol.science.upjs.sk/index.php/en/teaching/lectures-seminars/pos2)
+
+[nastavenie procesov](http://root.chobits.ch/zmena-priority-procesu/)
