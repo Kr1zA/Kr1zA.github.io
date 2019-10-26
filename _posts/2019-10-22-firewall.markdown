@@ -13,7 +13,7 @@ netfilter.org is home to the software of the packet filtering framework inside t
 Software inside this framework enables packet filtering, network address [and port] translation (NA[P]T) and other packet mangling. It is the re-designed and heavily improved successor of the previous Linux 2.2.x ipchains and Linux 2.0.x ipfwadm systems.
 
 Nasledujuci diagram znazornuje cestu packetu v ramci linuxoveho stroja:
-[![diagram retazcov]({{site.baseurl}}/img/cestaPacketu.jpg "diagram retazcov")](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram retazcov")
+[![diagram retazcov]({{site.baseurl}}/img/cestaPacketu.jpg)](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram retazcov")
 
 Tabulka __filter__ 
 
