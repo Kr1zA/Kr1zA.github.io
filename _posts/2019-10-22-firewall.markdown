@@ -17,22 +17,22 @@ Software inside this framework enables packet filtering, network address [and po
 ### Cesta packetu
 Pakety prechádzajú pri svojej ceste tabuľkami. Popíšeme si štyri (hlavné?) tabuľky:
  * filter – je východzia tabuľka určená na uchovávanie pravidiel filtrovania paketov, ktorá obsahuje tri reťaze:
-  ** INPUT (pakety cielené do lokálneho stroja),
-  ** FORWARD (pakety smerované cez stroj – počítač funguje ako smerovač) a
-  ** OUTPUT (lokálne generované pakety);
+  * INPUT (pakety cielené do lokálneho stroja),
+  * FORWARD (pakety smerované cez stroj – počítač funguje ako smerovač) a
+  * OUTPUT (lokálne generované pakety);
  * nat – je tabuľka používaná len paketmi vytvárajúcimi nové spojenie a pozostáva tiež z troch reťazí:
-  ** PREROUTING (úprava paketov hneď po vstupe),
-  ** OUTPUT (úprava lokálne generovaných paketov) a
-  ** POSTROUTING (úprava paketov tesne pred výstupom);
+  * PREROUTING (úprava paketov hneď po vstupe),
+  * OUTPUT (úprava lokálne generovaných paketov) a
+  * POSTROUTING (úprava paketov tesne pred výstupom);
  * mangle – je tabuľke na špeciálnu manipuláciu s paketmi a má päť reťazí:
-  ** PREROUTING (úprava prichádzajúcich paketov pred smerovaním),
-  ** OUTPUT (úprava lokálne generovaných paketov pred smerovaním),
-  ** INPUT (úprava paketov cielených do lokálneho stroja),
-  ** FORWARD (úprava paketov smerovaných cez stroj) a
-  ** POSTROUTING (úprava paketov tesne pred výstupom); 
+  * PREROUTING (úprava prichádzajúcich paketov pred smerovaním),
+  * OUTPUT (úprava lokálne generovaných paketov pred smerovaním),
+  * INPUT (úprava paketov cielených do lokálneho stroja),
+  * FORWARD (úprava paketov smerovaných cez stroj) a
+  * POSTROUTING (úprava paketov tesne pred výstupom); 
  * raw – je tabuľka na výnimky zo sledovania stavu a je spracovaná ako prvá. V tabuľke sú dve reťaze:
-  ** PREROUTING (pakety vstupujúce cez sieťové rozhranie) a
-  ** OUTPUT (lokálne generované pakety). 
+  * PREROUTING (pakety vstupujúce cez sieťové rozhranie) a
+  * OUTPUT (lokálne generované pakety). 
 
 Nasledujuci diagram znazornuje cestu packetu v ramci linuxoveho stroja:
 [![diagram retazcov]({{site.baseurl}}/img/cestaPacketu.jpg)](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram retazcov")
