@@ -6,19 +6,55 @@ tags:   [AOS, firewall]
 ---
 ## [Iptables](https://www.netfilter.org/ "Iptables")
 
+Pekné [video](https://www.youtube.com/watch?v=kDEX1HXybrU) na základné vysvetlenie, na čo je dobrý firewall. 
+
 __Z oficialnej stranky:__
 
 netfilter.org is home to the software of the packet filtering framework inside the Linux 2.4.x and later kernel series. Software commonly associated with netfilter.org is iptables.
 
 Software inside this framework enables packet filtering, network address [and port] translation (NA[P]T) and other packet mangling. It is the re-designed and heavily improved successor of the previous Linux 2.2.x ipchains and Linux 2.0.x ipfwadm systems.
 
+### Cesta packetu
+Pakety prechádzajú pri svojej ceste tabuľkami. Popíšeme si štyri (hlavné?) tabuľky:
+ * filter – je východzia tabuľka určená na uchovávanie pravidiel filtrovania paketov, ktorá obsahuje tri reťaze:
+  ** INPUT (pakety cielené do lokálneho stroja),
+  ** FORWARD (pakety smerované cez stroj – počítač funguje ako smerovač) a
+  ** OUTPUT (lokálne generované pakety);
+ * nat – je tabuľka používaná len paketmi vytvárajúcimi nové spojenie a pozostáva tiež z troch reťazí:
+  ** PREROUTING (úprava paketov hneď po vstupe),
+  ** OUTPUT (úprava lokálne generovaných paketov) a
+  ** POSTROUTING (úprava paketov tesne pred výstupom);
+ * mangle – je tabuľke na špeciálnu manipuláciu s paketmi a má päť reťazí:
+  ** PREROUTING (úprava prichádzajúcich paketov pred smerovaním),
+  ** OUTPUT (úprava lokálne generovaných paketov pred smerovaním),
+  ** INPUT (úprava paketov cielených do lokálneho stroja),
+  ** FORWARD (úprava paketov smerovaných cez stroj) a
+  ** POSTROUTING (úprava paketov tesne pred výstupom); 
+ * raw – je tabuľka na výnimky zo sledovania stavu a je spracovaná ako prvá. V tabuľke sú dve reťaze:
+  ** PREROUTING (pakety vstupujúce cez sieťové rozhranie) a
+  ** OUTPUT (lokálne generované pakety). 
+
 Nasledujuci diagram znazornuje cestu packetu v ramci linuxoveho stroja:
 [![diagram retazcov]({{site.baseurl}}/img/cestaPacketu.jpg)](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram retazcov")
 
-Tabulka __filter__ 
+Alebo iný obrázok:
+[![diagram retazcov]({{site.baseurl}}/img/cestaPacketu2.png)](https://gist.github.com/DominicBreuker/c948d938adc9257585fc2f40d50b96c4 "diagram retazcov")
 
+#### Čo sme robili na hodine?
 
-[Prezentacia](https://github.com/Kr1zA/Kr1zA.github.io/blob/master/pdf/firewall.pdf)
+  * nainštalovali sme na klientovi ssh server `apt install openssh`
+  * na klientovi sme nastavovali firewall
+  * vsetko sme zakázali politikou DROP
+  * povolili sme SSH
+  * povolili sme pingovanie
+  * povolili sme DNS
+  * povolili sme port 80
+  * hrali sme sa s logovaním
+  * nastavili sme perzistentnosť firewallu
+  
+
+[Prezentácia](https://github.com/Kr1zA/Kr1zA.github.io/blob/master/pdf/firewall.pdf) použitá na hodine. 
+
 
 Odkazy:
 [Seriál Vše o iptables](https://www.root.cz/serialy/vse-o-iptables/ "Seriál Vše o iptables")
