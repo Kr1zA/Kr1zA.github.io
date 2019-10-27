@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SSH server
-date:   2018-08-23 16:02:00 +0300
+date:   2019-10-27
 tags:   [AOS, SSH]
 ---
 
