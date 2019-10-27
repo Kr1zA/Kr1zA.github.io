@@ -34,12 +34,7 @@ Pakety prechádzajú pri svojej ceste tabuľkami. Popíšeme si štyri (hlavné?
    - PREROUTING (pakety vstupujúce cez sieťové rozhranie) a
    - OUTPUT (lokálne generované pakety). 
    
-Vo všeobecnosti neviem o tom, aby bola štruktúra presne daná. Napríklad, je možné vytvárať vlastné reťazce pomocou:
-
-```
-iptables -N whitelist
-iptables -N blacklist
-```
+Vo všeobecnosti neviem o tom, aby bola štruktúra presne daná. Napríklad, je možné vytvárať vlastné reťazce.
 
 Nasledujúci diagram znázorňuje cestu packetu v rámci linuxového stroja:
 [![diagram reťazcov]({{site.baseurl}}/img/cestaPacketu.jpg)](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram reťazcov")
