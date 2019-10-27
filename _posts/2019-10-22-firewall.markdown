@@ -8,7 +8,7 @@ tags:   [AOS, firewall]
 
 Pekné [video](https://www.youtube.com/watch?v=kDEX1HXybrU) na základné vysvetlenie, na čo je dobrý firewall. 
 
-### Z oficialnej stranky:
+### Z oficiálnej stránky:
 
 netfilter.org is home to the software of the packet filtering framework inside the Linux 2.4.x and later kernel series. Software commonly associated with netfilter.org is iptables.
 
@@ -34,18 +34,19 @@ Pakety prechádzajú pri svojej ceste tabuľkami. Popíšeme si štyri (hlavné?
    - PREROUTING (pakety vstupujúce cez sieťové rozhranie) a
    - OUTPUT (lokálne generované pakety). 
    
-Vo všeobecnosti neviem o tom, aby bola struktúra presne daná. Napríklad, je možné vytvárať vlastné reťazce pomocou:
+Vo všeobecnosti neviem o tom, aby bola štruktúra presne daná. Napríklad, je možné vytvárať vlastné reťazce pomocou:
 
 ```
 iptables -N whitelist
 iptables -N blacklist
 ```
 
-Nasledujúci diagram znázornuje cestu packetu v rámci linuxoveho stroja:
-[![diagram retazcov]({{site.baseurl}}/img/cestaPacketu.jpg)](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram retazcov")
+Nasledujúci diagram znázorňuje cestu packetu v rámci linuxového stroja:
+[![diagram reťazcov]({{site.baseurl}}/img/cestaPacketu.jpg)](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram reťazcov")
 
 Alebo iný obrázok:
-[![diagram retazcov]({{site.baseurl}}/img/cestaPacketu2.png)](https://gist.github.com/DominicBreuker/c948d938adc9257585fc2f40d50b96c4 "diagram retazcov")
+
+[![diagram reťazcov]({{site.baseurl}}/img/cestaPacketu2.png)](https://gist.github.com/DominicBreuker/c948d938adc9257585fc2f40d50b96c4 "diagram reťazcov")
 
 ### Čo môžeme nastavovať?
 
@@ -60,7 +61,7 @@ Ukázali sme si základné možnosti filtrovania packetov na Linuxe.
   * nainštalovali sme na klientovi ssh server 
     * `apt install openssh`
   * na klientovi sme nastavovali firewall
-  * vsetko sme zakázali politikou DROP
+  * všetko sme zakázali politikou DROP
     * `iptables -P INPUT DROP`
     * `iptables -P OUTPUT DROP`
     * `iptables -P FORWARD DROP`
@@ -78,12 +79,12 @@ Ukázali sme si základné možnosti filtrovania packetov na Linuxe.
     * `iptables -A INPUT -p tcp -i eth0 --sport 80 -j ACCEPT`
   * hrali sme sa s logovaním
     * `iptables -A INPUT -s 192.168.0.1 -j LOG --log-prefix "Log-test: "`
-    * následne sme prehľadali `/var/log`, no logy sme nenašli. Vysvetlenie je také, ze predchádzajúce pravidlá, ktoré sme nastavili obsahujú -j (jump) a teda sa k tomuto pravidlu packety nedostali. Pravidlo sme teda presunuli v reťazi vyššie.
+    * následne sme prehľadali `/var/log`, no logy sme nenašli. Vysvetlenie je také, že predchádzajúce pravidlá, ktoré sme nastavili obsahujú -j (jump), a teda sa k tomuto pravidlu packety nedostali. Pravidlo sme teda presunuli v reťazi vyššie na začiatok.
   * nastavili sme perzistentnosť firewallu
-    * `ptables-save > /etc/iptables.rules # ulozenie pravidiel do suboru`
-    * už stačí len načítať konfiguráciu pri štarte napríklad pridaním riadku `pre-up iptables-restore < /etc/iptables.rules` pod `riadok iface lo inet loopback` v súbore `/etc/network/interfaces`
+    * `ptables-save > /etc/iptables.rules # uloženie pravidiel do súboru`
+    * už stačí len načítať konfiguráciu pri štarte, napríklad pridaním riadku `pre-up iptables-restore < /etc/iptables.rules` pod riadok `iface lo inet loopback` v súbore `/etc/network/interfaces`
   
-  * zabudol som spomenúť, že ak by sme chceli spustiť nejakú službu lokálne (napr. programujeme web stránku a testujeme ju lokálne), tak by bolo dobré povolit trafik na loopbacku, inak nám to nepojde:
+  * Zabudol som spomenúť, že ak by sme chceli spustiť nejakú službu lokálne (napr. programujeme web stránku a testujeme ju lokálne), tak by bolo dobré povoliť trafik na loopbacku, inak nám to nepôjde:
     * `sudo iptables -A INPUT -i lo -j ACCEPT`
     * `sudo iptables -A OUTPUT -o lo -j ACCEPT`
 
