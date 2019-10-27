@@ -4,7 +4,6 @@ title:  Linux NAT Router
 date:   2019-10-27
 tags:   AOS, NAT
 ---
-## 1. Linux NAT Router
 
 Konfigurovať NAT server budeme na Debiane 9 nainstalovanom vo Virtualboxe. Nainštalujeme si 2 virtuálne stroje, kde jeden bude slúžiť ako brána/NAT server a druhý ako klient na ktorom budeme testovať, či nastavená konfigurácia na NAT serveri funguje. 
 
