@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  DHCP server
-date:   2018-08-23 16:03:00 +0300
-tags:   AOS,DHCP
+date:   2019-10-27
+image:  dhcp.jpg
+tags:   [AOS, DHCP]
 ---
 
 Po nastavení [NATU](https://kr1za.github.io/linux-NAT-router/), máme nastavené pripojenie klienta k serveru nastavením pevnej IP adresy na klientovi. Funguje to ale je to nepraktické, ak sa často pripája a odpája zo siete veľa klientov. Poďme teda nastaviť DHCP server, ktorý priradí pripojeným klientom IP adresy automaticky.
