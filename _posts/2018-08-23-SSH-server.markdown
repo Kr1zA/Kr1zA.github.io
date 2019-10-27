@@ -2,6 +2,7 @@
 layout: post
 title:  SSH server
 date:   2019-10-27
+image:  ssh.jpg
 tags:   [AOS, SSH]
 ---
 
