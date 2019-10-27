@@ -2,6 +2,7 @@
 layout: post
 title:  firewall
 date:   2019-10-22 
+image:  firewall.png
 tags:   [AOS, firewall]
 ---
 ## [Iptables](https://www.netfilter.org/ "Iptables")
