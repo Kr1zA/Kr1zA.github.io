@@ -8,7 +8,7 @@ tags:   [AOS, firewall]
 
 Pekné [video](https://www.youtube.com/watch?v=kDEX1HXybrU) na základné vysvetlenie, na čo je dobrý firewall. 
 
-__Z oficialnej stranky:__
+### Z oficialnej stranky:
 
 netfilter.org is home to the software of the packet filtering framework inside the Linux 2.4.x and later kernel series. Software commonly associated with netfilter.org is iptables.
 
@@ -53,7 +53,7 @@ Pomocou iptables môžeme nastavovať pravidlá, ktoré budu hovoriť, čo sa m�
 
 Viac sa dozviete [tu](https://pavolsokol.science.upjs.sk/index.php/sk/teaching/lectures-seminars/administracia-operacnych-systemov/76-firewall).
 
-#### Čo sme robili na hodine?
+### Čo sme robili na hodine?
 
 Ukázali sme si základné možnosti filtrovania packetov na Linuxe.
 
@@ -91,7 +91,8 @@ Ukázali sme si základné možnosti filtrovania packetov na Linuxe.
 
 Viac o možnostiach iptables sa dozviete na [manuálových stránkach](https://linux.die.net/man/8/iptables).
 
-Odkazy:
+### Odkazy:
+
 [Seriál Vše o iptables](https://www.root.cz/serialy/vse-o-iptables/ "Seriál Vše o iptables")
 
 [Seriál Stavíme firewall](https://www.root.cz/serialy/stavime-firewall/ "Seriál Stavíme firewall")
