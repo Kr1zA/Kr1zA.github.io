@@ -2,6 +2,7 @@
 layout: post
 title:  Linux NAT Router
 date:   2019-10-27
+image:  nat.jpg
 tags:   AOS, NAT
 ---
 
