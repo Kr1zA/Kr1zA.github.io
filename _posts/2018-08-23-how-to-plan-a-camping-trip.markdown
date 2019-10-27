@@ -1,26 +1,59 @@
 ---
 layout: post
-title:  How to Plan a Camping Trip
+title:  DHCP server
 date:   2018-08-23 16:03:00 +0300
-image:  06.jpg
-tags:   Trip
+tags:   AOS,DHCP
 ---
-Unicorn vegan humblebrag whatever microdosing, yr pabst post-ironic chartreuse. IPhone irony fingerstache microdosing juice poutine. Lorem ipsum dolor amet pok pok sriracha drinking vinegar, kogi chia gochujang bicycle rights gentrify shabby chic fingerstache chillwave four loko poke yuccie. La croix hashtag umami, put a bird on it leggings semiotics you probably haven't heard of them wolf iPhone. Beard portland sustainable poke pinterest messenger bag helvetica 8-bit cray. Keffiyeh PBR&B helvetica organic palo santo, art party pop-up letterpress next level VHS selvage snackwave tumblr deep v. Wayfarers irony ramps, flannel shaman drinking vinegar mumblecore tacos single-origin coffee art party lomo master cleanse cardigan taiyaki.
 
-Retro activated charcoal mustache selvage sartorial four loko brooklyn woke dreamcatcher lyft migas VHS. Bitters celiac flannel schlitz aesthetic echo park polaroid. Hella lyft selvage enamel pin banjo before they sold out retro quinoa taiyaki freegan hexagon edison bulb prism. Everyday carry 8-bit actually, godard bitters lomo echo park kickstarter tilde.
+Po nastavení [NATU](https://kr1za.github.io/linux-NAT-router/), máme nastavené pripojenie klienta k serveru nastavením pevnej IP adresy na klientovi. Funguje to ale je to nepraktické, ak sa často pripája a odpája zo siete veľa klientov. Poďme teda nastaviť DHCP server, ktorý priradí pripojeným klientom IP adresy automaticky.
 
-Gluten-free bicycle rights kogi ramps chartreuse lyft. Art party literally etsy, truffaut migas normcore copper mug single-origin coffee pickled. Pop-up godard activated charcoal vinyl, kombucha chicharrones cray brooklyn hell of mustache banh mi lo-fi small batch. Ugh literally cred gluten-free. Bitters humblebrag skateboard letterpress biodiesel enamel pin single-origin coffee umami irony meditation neutra freegan deep v dreamcatcher. Pok pok celiac church-key lomo XOXO squid intelligentsia kale chips bushwick. Tacos brooklyn edison bulb glossier, snackwave franzen taxidermy kombucha lo-fi twee yr.
+Najprv nainštalujeme dhcp príkazom:
 
-![]({{site.baseurl}}/img/04.jpg)
+> apt-get install isc-dhcp-server
 
-Typewriter jean shorts literally godard la croix. Put a bird on it wayfarers distillery taiyaki knausgaard +1, hella fixie. Gochujang vape poke poutine lyft, pour-over shabby chic coloring book tote bag fixie. Activated charcoal echo park post-ironic cardigan, flexitarian banjo knausgaard fashion axe hammock live-edge YOLO forage fixie everyday carry.
+Zapnutie/vypnutie/reštartovanie DHCP servera vieme urobiť príkazom:
 
-Kickstarter +1 brunch hell of twee asymmetrical cardigan hella forage humblebrag. Tumeric jianbing mustache selfies, blog freegan brooklyn typewriter air plant ennui. Poke snackwave chia vaporware normcore. Chambray brooklyn poutine polaroid. Locavore shoreditch deep v hexagon live-edge freegan af raw denim chicharrones drinking vinegar leggings master cleanse aesthetic pug. Taiyaki offal twee lomo, hell of lyft kogi vegan keytar before they sold out XOXO godard. Slow-carb quinoa pitchfork tumblr biodiesel.
+> service isc-dhcp-server start/stop/restart
 
-Live-edge williamsburg semiotics organic. Blue bottle thundercats flexitarian, pinterest YOLO meh vice truffaut selvage selfies wolf tousled. Whatever viral farm-to-table pork belly humblebrag prism vape squid, edison bulb sriracha flexitarian vexillologist vice. Locavore blog wolf bicycle rights yr literally vaporware vinyl.
+Po inštalácia sa DHCP server automaticky spustí, spustenie dhcp ale bude neúspešné. Dǒvodom je zlé konfigurácia. Potrebujeme nastaviť na ktorom rozhraní bude fungovať DHCP server. Urobíme to pridaním riadka `INTERFACES="eth0s8"` v súbore `/etc/default/isc-dhcp-server`. Ak sa predtým nachádzajú iné nastavenia `INTERFACESv4` alebo `INTERFACESv6` zakomentujeme ich. Ak chceme aby DHCP fungovalao na viacerých rozhraniach odvelíme ich medzerou, napr.: `INTERFACES="eth0s8 eth0s9"`.
 
-Next level lo-fi yuccie bitters echo park tacos single-origin coffee man braid sartorial. Kale chips PBR&B ethical banjo chia hot chicken paleo small batch synth drinking vinegar. Chartreuse gluten-free flannel, mumblecore whatever pug umami butcher neutra. Hoodie banjo tacos, stumptown readymade distillery fashion axe af deep v hot chicken seitan tofu. Listicle vape portland, art party mlkshk yuccie YOLO austin 8-bit. Vaporware vinyl artisan, roof party deep v banjo cronut.
+DHCP stále nepôjde spustiť. Potrebujeme ešte deklarovať podsieť. Urobíme to v konfiguračnom súbore `/etc/dhcp/dhcpd.conf` pridaním nasledovných riadkov na koniec súboru:
 
-Letterpress next level master cleanse mlkshk echo park celiac chillwave cray 90's chia deep v. Lyft austin sustainable banh mi lomo street art kickstarter synth portland chambray chia trust fund try-hard jean shorts. Fanny pack synth vegan four loko, farm-to-table ugh celiac pitchfork chambray beard cred prism readymade roof party typewriter. Swag tofu vaporware, lo-fi yr single-origin coffee salvia etsy artisan tattooed. Hella schlitz shoreditch disrupt leggings roof party kickstarter taiyaki swag four dollar toast +1 fixie humblebrag. Pour-over air plant literally bespoke hella raw denim. Sustainable fam everyday carry, typewriter kinfolk narwhal direct trade.
+```
+subnet 192.168.1.0 netmask 255.255.255.0 {
+	range 192.168.1.2 192.168.1.100; #nastavienie rozsahu pridelovanych, zaciname od 192.168.1.2 lebo 192.168.1.1 je brana
+	option routers 192.168.1.1; #adresa routra
+	option subnet-mask 255.255.255.0; #maska podsiete
+	option broadcast-address 192.168.1.255; #broadcastova adresa
+}
+```
+Takýmto nastavením budú pripojeným zariadeniam priraďované adresy z rozsahu 192.168.1.2 až 192.168.1.100. Ak chceme niektorému zariadeniu priradiť pevnú ip adresu (napríklad tlačiarni) pridáme do časti subnet na pridáme:
 
-Man braid sustainable affogato pinterest leggings. Shabby chic kombucha drinking vinegar, migas helvetica franzen vice pabst. Fashion axe YOLO hexagon ramps. Keffiyeh gluten-free williamsburg kombucha. Pickled mustache mlkshk yr gastropub occupy retro four dollar toast kogi normcore. Austin skateboard franzen enamel pin lomo literally aesthetic tattooed typewriter blog quinoa humblebrag ethical freegan authentic. Vaporware crucifix 90's, venmo adaptogen bitters migas.
+```
+host laser-printer-lex1 {
+	hardware ethernet 08:00:2b:4c:a3:82; #konkretna MAC adresa tlaciarne
+        fixed-address 192.168.1.120; #priradena pevna adresa
+}
+```
+
+V danom súbore môžeme ešte nastaviť:
+
+* `option domain-name "kriza.org"`, nastavenie doménoveho mena v mojom prípade na kriza.org
+* `option domain-name-servers 8.8.8.8;` nastavenie DNS serverna v mojom prípade googlovský 
+* `max-lease-time 600`, nastavenie ako dlho budeme držat IP pre klientskú stanicu
+* `authoritative`, nastavenie, že by sme mali byť oficialny/jediný DHCP server v tejto sieti
+
+Ak chceme zobraziť priradené IP adresy použijeme príkaz:
+
+> cat /var/lib/dhcp/dhcpd.leases
+
+Chybové hlášky DHCP servera vieme vypísať príkazom:
+
+> tail /var/log/syslog
+
+Máme nastavený DHCP server. Ale na klientovi máme nastavenú statickú IP adresu. Ak chceme aby klient dostával IP adresu od DHCP servera musím vrátiť nastavenie v súbore /etc/network/interfaces na pôvodné:
+
+```
+auto enp0s3
+iface enp0s3 inet dhcp
+```
