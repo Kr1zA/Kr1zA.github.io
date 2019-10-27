@@ -4,9 +4,9 @@ title:  Linux NAT Router
 date:   2019-10-27
 tags:   AOS, NAT
 ---
-## 1. Hardering NAT servera
+## 1. Linux NAT Router
 
-Konfigurovať NAT server budeme na Debiane 9 nainstalovanom vo Virtualboxe. Nainštaluejme si 2 virtuálne stroje, kde jeden bude slúžiť ako brána/NAT server a druhý ako klient na ktorom budeme testovať, či nastavená konfigurácia na NAT serveri funguje. 
+Konfigurovať NAT server budeme na Debiane 9 nainstalovanom vo Virtualboxe. Nainštalujeme si 2 virtuálne stroje, kde jeden bude slúžiť ako brána/NAT server a druhý ako klient na ktorom budeme testovať, či nastavená konfigurácia na NAT serveri funguje. 
 
 Na NAT serveri nastavime v nastaveniach virtuálky 2 sieťové adaptéry (jeden potrebujeme na dotiahnutie internetu zvonku - WAN a jeden pre lokálnu siet LAN). Jeden bude nastavený na NAT aby sme dostali IP addresu z voknu z DHCP. Druhý bude nastaveny na Internal Network teda pre nás LAN. Na druhom klientskom stroji nastavíme jednu sieťovku na Internal Network.
 
