@@ -33,36 +33,70 @@ Pakety prechádzajú pri svojej ceste tabuľkami. Popíšeme si štyri (hlavné?
  - raw – je tabuľka na výnimky zo sledovania stavu a je spracovaná ako prvá. V tabuľke sú dve reťaze:
    - PREROUTING (pakety vstupujúce cez sieťové rozhranie) a
    - OUTPUT (lokálne generované pakety). 
+   
+Vo všeobecnosti neviem o tom, aby bola struktúra presne daná. Napríklad, je možné vytvárať vlastné reťazce pomocou:
 
-Nasledujuci diagram znazornuje cestu packetu v ramci linuxoveho stroja:
+```
+iptables -N whitelist
+iptables -N blacklist
+```
+
+Nasledujúci diagram znázornuje cestu packetu v rámci linuxoveho stroja:
 [![diagram retazcov]({{site.baseurl}}/img/cestaPacketu.jpg)](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/ "diagram retazcov")
 
 Alebo iný obrázok:
 [![diagram retazcov]({{site.baseurl}}/img/cestaPacketu2.png)](https://gist.github.com/DominicBreuker/c948d938adc9257585fc2f40d50b96c4 "diagram retazcov")
 
+### Čo môžeme nastavovať?
+
+Pomocou iptables môžeme nastavovať pravidlá, ktoré budu hovoriť, čo sa má s paketmi robiť. 
+
+Viac sa dozviete [tu](https://pavolsokol.science.upjs.sk/index.php/sk/teaching/lectures-seminars/administracia-operacnych-systemov/76-firewall).
+
 #### Čo sme robili na hodine?
 
-  * nainštalovali sme na klientovi ssh server `apt install openssh`
+Ukázali sme si základné možnosti filtrovania packetov na Linuxe.
+
+  * nainštalovali sme na klientovi ssh server 
+    * `apt install openssh`
   * na klientovi sme nastavovali firewall
   * vsetko sme zakázali politikou DROP
+    * `iptables -P INPUT DROP`
+    * `iptables -P OUTPUT DROP`
+    * `iptables -P FORWARD DROP`
   * povolili sme SSH
+    * `iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT`
+    * `iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT`
   * povolili sme pingovanie
+    * `iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT`
+    * `iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT`
   * povolili sme DNS
+    * `iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT`
+    * `iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT`
   * povolili sme port 80
+    * `iptables -A OUTPUT -p tcp -o eth0 --dport 80 -j ACCEPT`
+    * `iptables -A INPUT -p tcp -i eth0 --sport 80 -j ACCEPT`
   * hrali sme sa s logovaním
+    * `iptables -A INPUT -s 192.168.0.1 -j LOG --log-prefix "Log-test: "`
+    * následne sme prehľadali `/var/log`, no logy sme nenašli. Vysvetlenie je také, ze predchádzajúce pravidlá, ktoré sme nastavili obsahujú -j (jump) a teda sa k tomuto pravidlu packety nedostali. Pravidlo sme teda presunuli v reťazi vyššie.
   * nastavili sme perzistentnosť firewallu
+    * `ptables-save > /etc/iptables.rules # ulozenie pravidiel do suboru`
+    * už stačí len načítať konfiguráciu pri štarte napríklad pridaním riadku `pre-up iptables-restore < /etc/iptables.rules` pod `riadok iface lo inet loopback` v súbore `/etc/network/interfaces`
   
+  * zabudol som spomenúť, že ak by sme chceli spustiť nejakú službu lokálne (napr. programujeme web stránku a testujeme ju lokálne), tak by bolo dobré povolit trafik na loopbacku, inak nám to nepojde:
+    * `sudo iptables -A INPUT -i lo -j ACCEPT`
+    * `sudo iptables -A OUTPUT -o lo -j ACCEPT`
 
 [Prezentácia](https://github.com/Kr1zA/Kr1zA.github.io/blob/master/pdf/firewall.pdf) použitá na hodine. 
 
+Viac o možnostiach iptables sa dozviete na [manuálových stránkach](https://linux.die.net/man/8/iptables).
 
 Odkazy:
 [Seriál Vše o iptables](https://www.root.cz/serialy/vse-o-iptables/ "Seriál Vše o iptables")
 
 [Seriál Stavíme firewall](https://www.root.cz/serialy/stavime-firewall/ "Seriál Stavíme firewall")
 
-https://www.docum.org/docum.org/kptd/
+[Nie zlý cheat sheet](https://gist.github.com/DominicBreuker/c948d938adc9257585fc2f40d50b96c4)
 
-https://www.booleanworld.com/depth-guide-iptables-linux-firewall/
-
+[Ďalší diagram](https://www.docum.org/docum.org/kptd/)
 
