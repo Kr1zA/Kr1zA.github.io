@@ -182,3 +182,6 @@ Certbot sa nás spýta pre ktorý web chceme aktivovať HTTPS. Zvolíme číslo 
 Keďže certifikát má určitú platnosť, niekedy je potrebné ho obnoviť. To mǒžeme urobiť príkazom:
 
 > sudo certbot renew
+
+[Prezentácia](https://github.com/Kr1zA/Kr1zA.github.io/blob/master/pdf/web.pdf) použitá na hodine. 
+
