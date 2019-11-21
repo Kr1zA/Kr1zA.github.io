@@ -32,7 +32,7 @@ Obsah by mal vychádzať z: https://www.lpi.org/our-certifications/lpic-2-overvi
 
 7.týždeň  (31.10.2019) (4h) - súborový systém, webhosting - [Webový server](https://kr1za.github.io/webovy-server/), DB server (MySQL), PHP, HTTPS, bezpečnostné opatrenia?
 
-9.týždeň  (14.11.2019) (4h) - DNS, Súborové služby (SAMBA, NFS, FTP)
+9.týždeň  (14.11.2019) (4h) - [DNS, Súborové služby (SAMBA, NFS, FTP)](https://kr1za.github.io/dns-suborove-sluzby/)
 
 11.týždeň (28.11.2019) (4h) - Virtualizácia (LXC, HyperV, Qemu)
 
