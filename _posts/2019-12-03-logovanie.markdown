@@ -11,6 +11,8 @@ Nastavme si teda logovací server pomocou Rsyslogu.
 
 ### [Rsyslog](https://www.rsyslog.com/)
 
+#### Server
+
 Na serveri upravíme konfigurák `/etc/rsyslog.conf` nasledovne:
 
 * najprv nastavíme ako a na akom porte bude server počúvať (v našom prípade UDT aj TCP na štandardnom porte):
@@ -31,12 +33,20 @@ $template IpTemplate,"/var/log/%FROMHOST-IP%/syslog.log"
 *.* ?IpTemplate
 & ~
 ```
+
 Už len 1 raštart služby:
 
 > sudo systemctl restart rsyslog
 
+Či služba beží na definovanom porte môžeme skontrolovať pomocou:
 
-Na klientovi nastavíme:
+> sudo ss -tulnp | grep "rsyslog"
+
+#### Klient
+
+Na klientovi nastavíme kde má posielať logy, v súbore `/etc/rsyslog.conf` pridáme riadok:
+
+> *.*  @@ipAdresaServera:514
 
 
 ### Odkazy:
