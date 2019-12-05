@@ -2,6 +2,7 @@
 layout: page
 title: aboutMe
 image: 08.jpg
+order: 3
 permalink: /aboutMe/
 ---
 
