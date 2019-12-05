@@ -10,7 +10,7 @@
           <nav class="nav-menu">
             <i class="menu-close ion ion-ios-close"></i>
             <ul class="menu-list">
-              {% for page in site.pages %}
+              {% for page in site.pages | sort: "order" %}
                 {% unless page.name == 'tags.html' or page.name == '404.html' %}
               {% if page.title %}
               <li class="menu-item"><a href="{{ page.url | prepend: site.baseurl }}" class="menu-link">{{ page.title }}</a></li>
