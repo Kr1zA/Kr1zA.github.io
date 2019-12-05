@@ -2,6 +2,7 @@
 layout: page
 title: PhDStudy
 image: 08.jpg
+order: 0
 permalink: /PhDStudy/
 ---
 
