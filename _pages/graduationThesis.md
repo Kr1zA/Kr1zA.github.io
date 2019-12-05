@@ -2,6 +2,7 @@
 layout: page
 title: graduationThesis
 permalink: /graduationThesis/
+order: 1
 image: 11.jpg
 ---
 ### Title:
