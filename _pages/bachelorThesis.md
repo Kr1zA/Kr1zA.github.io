@@ -1,6 +1,7 @@
 ---
 layout: page
 title: bachelorThesis
+order: 2
 permalink: /bachelorThesis/
 ---
 
