@@ -8,4 +8,8 @@ tags:   [MIS, 1c]
 ## Vytvorenie web stránky
 
 1. registrácia na github.com
-2.
+2. pre ukážku použijem [túto tému](http://jekyllthemes.org/themes/agency/)
+ - click na homepage nás dostane na git stránku projektu
+3. klikneme vpravo hore na **Fork** a tým urobíme "kópiu" projektu do nášho git repozitára
+4. klikneme na settings a skontrolujeme časť **GitHub Pages**, či je stránka aktívna
+5. pustíme sa do upravovania
