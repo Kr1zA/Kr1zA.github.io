@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "1. Cvičenie MIS"
+date:   2020-02-09 
+tags:   [MIS, 1c]
+---
+
+## Vytvorenie web stránky
+
+1. registrácia na github.com
+2.
