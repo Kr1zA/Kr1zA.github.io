@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Manažment informačných systémov"
+date:   2020-02-09 
+tags:   [MIS]
+---
+
+Cvičenia:
+
+1. Úvod + vytvorenie web stránky
+2. ...
