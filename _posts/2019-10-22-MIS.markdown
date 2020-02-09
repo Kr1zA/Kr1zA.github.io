@@ -7,5 +7,5 @@ tags:   [MIS]
 
 Cvičenia:
 
-1. Úvod + vytvorenie web stránky
+1. [Úvod + vytvorenie web stránky](https://kr1za.github.io/mis1c/)
 2. ...
