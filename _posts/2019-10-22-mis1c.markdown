@@ -23,7 +23,7 @@ tags:   [MIS, 1c]
 - lebo stačí zmeniť nazov repozitára na moj-git.github.io
 
 ### Ukážka:
-https://trebac.github.io/
+(https://trebac.github.io/)
 
 ### Iné možnosti:
 - https://jekyllthemes.io/theme/millennial - nepodarilo sa mi rozbehať lebo buildoval a buildoval a buil...
