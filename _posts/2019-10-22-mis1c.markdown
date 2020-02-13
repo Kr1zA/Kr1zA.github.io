@@ -24,3 +24,8 @@ tags:   [MIS, 1c]
 
 ### Ukážka:
 https://trebac.github.io/
+
+### Iné možnosti:
+- https://jekyllthemes.io/theme/millennial - nepodarilo sa mi rozbehať lebo buildoval a buildoval a buil...
+ - možno som bol len priliš lenivý a nešiel podľa návodu
+- https://pages-themes.github.io/minimal/ - podobná ako https://pages-themes.github.io/cayman/
