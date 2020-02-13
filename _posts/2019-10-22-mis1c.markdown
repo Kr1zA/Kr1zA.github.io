@@ -23,9 +23,12 @@ tags:   [MIS, 1c]
 - lebo stačí zmeniť nazov repozitára na moj-git.github.io
 
 ### Ukážka:
-(https://trebac.github.io/)
+<https://trebac.github.io/>
 
 ### Iné možnosti:
-- https://jekyllthemes.io/theme/millennial - nepodarilo sa mi rozbehať lebo buildoval a buildoval a buil...
+- <https://jekyllthemes.io/theme/millennial> - nepodarilo sa mi rozbehať lebo buildoval a buildoval a buil...
  - možno som bol len priliš lenivý a nešiel podľa návodu
-- https://pages-themes.github.io/minimal/ - podobná ako https://pages-themes.github.io/cayman/
+- <https://pages-themes.github.io/minimal/> - podobná ako <https://pages-themes.github.io/cayman/>
+
+### What da fňuk is markdown?
+Pekný [cheatsheat](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
