@@ -8,8 +8,19 @@ tags:   [MIS, 1c]
 ## Vytvorenie web stránky
 
 1. registrácia na github.com
-2. pre ukážku použijem [túto tému](http://jekyllthemes.org/themes/agency/)
- - click na homepage nás dostane na git stránku projektu
+2. pre ukážku použijem [túto tému](http://jekyllthemes.org/themes/agency/) alebo [túto tému](https://pages-themes.github.io/cayman/)
+ - click na homepage/View on GitHub nás dostane na git stránku projektu
 3. klikneme vpravo hore na **Fork** a tým urobíme "kópiu" projektu do nášho git repozitára
 4. klikneme na settings a skontrolujeme časť **GitHub Pages**, či je stránka aktívna
-5. pustíme sa do upravovania
+5. pustíme sa do upravovania:
+
+### Dôležité súbory v [tejto téme](https://pages-themes.github.io/cayman/):
+ - _layouts/default.html
+ - index.md
+ - _config.yml
+ 
+### Prečo je to https://moj-git.github.io/cayman/ a nie https://moj-git.github.io/?
+- lebo stačí zmeniť nazov repozitára na moj-git.github.io
+
+### Ukážka:
+https://trebac.github.io/
