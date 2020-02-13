@@ -5,7 +5,14 @@ date:   2020-02-09
 tags:   [MIS]
 ---
 
-Cvičenia:
+### Cvičenia:
 
 1. [Úvod + vytvorenie web stránky](https://kr1za.github.io/mis1c/)
 2. ...
+
+### Kontakt na cvičiacich:
+- terezia.mezesova (fish) student.upjs.sk
+- richard.stana (fish) student.upjs.sk
+
+
+#### [fish????](https://cs.wikipedia.org/wiki/Zavin%C3%A1%C4%8D_(j%C3%ADdlo))
